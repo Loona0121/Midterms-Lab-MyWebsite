@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books</title>
     <link rel="stylesheet" href="styles-books.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro&family=Literata" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    
 </head>
+<script src="script-books.js"></script>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -28,32 +29,48 @@
           </div>
         </nav>
       </header>
+
+<main>
+    <div class="categories">
+        <button onclick="filterBooks('fantasy')">Fantasy</button>
+        <button onclick="filterBooks('romance')">Romance</button>
+        <button onclick="filterBooks('horror')">Horror</button>
+        <button onclick="filterBooks('youngadult')">Young Adult</button>
+        <button onclick="filterBooks('mystery')">Mystery</button>
+        <button onclick="filterBooks('all')">Show All</button>
+    </div>
+    
+    <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Search books..." onkeyup="searchBooks()">
+    </div>
+    
         <div class="book-section">
             <!-- Fantasy Section -->
             <section id="fantasy">
                 <h2 class="mb-3">Fantasy</h2>
                 <div class="book-container">
-                    <div class="book-card">
+                    <div class="book-card" data-category="fantasy">
                         <img src="images/game_of_thrones.jpg" alt="A Game of Thrones">
                         <p class="book-title">A Game of Thrones</p>
                         <p class="book-author">George R.R. Martin</p>
                     </div>
-                    <div class="book-card">
+
+                    <div class="book-card" data-category="fantasy">
                         <img src="images/harrypotter.jpg" alt="Harry Potte">
                         <p class="book-title">Harry Potter</p>
                         <p class="book-author">Chris Smith</p>
                     </div>
-                    <div class="book-card">
+                    <div class="book-card" data-category="fantasy">
                         <img src="images/lotr.jpg" alt="Lord of the Rings">
                         <p class="book-title">Lord of the Rings</p>
                         <p class="book-author">J.K. Rowling</p>
                     </div>
-                    <div class="book-card">
+                    <div class="book-card" data-category="fantasy">
                         <img src="images/fourthwing.jpg" alt="Fourth Wing">
                         <p class="book-title">Fourth Wing</p>
                         <p class="book-author">Rebecca Yarros</p>
                     </div>
-                    <div class="book-card">
+                    <div class="book-card" data-category="fantasy">
                         <img src="images/twotm.jpg" alt="The Will of the Many">
                         <p class="book-title">The Will of the Many</p>
                         <p class="book-author">James Islington</p>
@@ -65,27 +82,31 @@
             <section id="romance" class="mt-5">
                 <h2 class="mb-3">Romance</h2>
                 <div class="book-container">
-                    <div class="book-card">
+                    <div class="book-card" data-category="romance">
                         <img src="images/sevenyearslip.jpg" alt="The Seven Year Slip">
                         <p class="book-title">The Seven Year Slip</p>
                         <p class="book-author">Ashley Poston</p>
                     </div>
-                    <div class="book-card">
+
+                    <div class="book-card" data-category="romance">
                         <img src="images/prideandprejudice.jpg" alt="Pride and Prejudicet">
                         <p class="book-title">Pride and Prejudice</p>
                         <p class="book-author">Jane Austen</p>
                     </div>
-                    <div class="book-card">
+
+                    <div class="book-card" data-category="romance">
                         <img src="images/archer'svoice.jpg" alt="Archer's Voice">
                         <p class="book-title">Archer's Voice</p>
                         <p class="book-author">Mia Sheridan</p>
                     </div>
-                    <div class="book-card">
+
+                    <div class="book-card" data-category="romance">
                         <img src="images/yourstruly.jpg" alt="Yours Truly">
                         <p class="book-title">Yours Truly</p>
                         <p class="book-author">Abby Jimenez</p>
                     </div>
-                    <div class="book-card">
+
+                    <div class="book-card" data-category="romance">
                         <img src="images/twlb.jpg" alt="Things We Left Behind">
                         <p class="book-title">Things We Left Behind</p>
                         <p class="book-author">Lucy Score</p>
@@ -95,27 +116,31 @@
             <section id="horror" class="mt-5">
                 <h2 class="mb-3">Horror</h2>
                 <div class="book-container">
-                    <div class="book-card">
+                    <div class="book-card" data-category="horror">
                         <img src="images/titf.jpg" alt="Tender is the Flesh">
                         <p class="book-title">Tender is the Flesh</p>
                         <p class="book-author">Agustina Bazterrica</p>
                     </div>
-                    <div class="book-card">
+
+                    <div class="book-card" data-category="horror">
                         <img src="images/brother.jpg" alt="Brother">
                         <p class="book-title">Brother</p>
                         <p class="book-author">Ania Ahlborn</p>
                     </div>
-                    <div class="book-card">
+
+                    <div class="book-card" data-category="horror">
                         <img src="images/diavola.jpg" alt="Diavola">
                         <p class="book-title">Diavola</p>
                         <p class="book-author">Jennifer Marie Thorne</p>
                     </div>
-                    <div class="book-card">
+
+                    <div class="book-card" data-category="horror">
                         <img src="images/intercepts.jpg" alt="Intercepts">
                         <p class="book-title">Intercepts</p>
                         <p class="book-author">T.J. Payne</p>
                     </div>
-                    <div class="book-card">
+
+                    <div class="book-card" data-category="horror">
                         <img src="images/exorcists.jpg" alt="The Exorcist's House">
                         <p class="book-title">The Exorcist's House</p>
                         <p class="book-author">Nick Roberts</p>
@@ -125,36 +150,74 @@
             <section id="youngadult" class="mt-5">
                 <h2 class="mb-3">Young Adult</h2>
                 <div class="book-container">
-                    <div class="book-card">
+                    <div class="book-card" data-category="youngadult">
                         <img src="images/bttm.jpg" alt="Better than the Movies">
                         <p class="book-title">Better than the Movies</p>
                         <p class="book-author">Lynn Painter</p>
                     </div>
-                    <div class="book-card">
+
+                    <div class="book-card" data-category="youngadult">
                         <img src="images/binding13.jpg" alt="Binding 13">
                         <p class="book-title">Binding 13</p>
                         <p class="book-author">Chloe Walsh</p>
                     </div>
-                    <div class="book-card">
+
+                    <div class="book-card" data-category="youngadult">
                         <img src="images/poweless.jpg" alt="Powerless">
                         <p class="book-title">Powerless</p>
                         <p class="book-author">Lauren Roberts</p>
                     </div>
-                    <div class="book-card">
+
+                    <div class="book-card" data-category="youngadult">
                         <img src="images/shatterme.Baw--" alt="Shatter Me">
                         <p class="book-title">Shatter Me</p>
                         <p class="book-author">Tahereh Mafi</p>
                     </div>
-                    <div class="book-card">
+
+                    <div class="book-card" data-category="youngadult">
                         <img src="images/lag.jpg" alt="Love and Gelato">
                         <p class="book-title">Love and Gelato</p>
                         <p class="book-author">Jenna Evans Welch</p>
+                    </div>
+
+            <!--Mystery Section-->
+            <section id="mystery" class="mt-5">
+                <h2 class="mb-3">Mystery</h2>
+                <div class="book-container">
+                    <div class="book-card" data-category="mystery">
+                        <img src="images/localwomanmissing.jpg" alt="Local Woman Missing">
+                        <p class="book-title">BLocal Woman Missing</p>
+                        <p class="book-author">Mary Kubica</p>
+                    </div>
+
+                    <div class="book-card" data-category="mystery">
+                        <img src="images/sp.jpg" alt="The Silent Patient">
+                        <p class="book-title">The Silent Patient</p>
+                        <p class="book-author">Alex Michaelides</p>
+                    </div>
+
+                    <div class="book-card" data-category="mystery">
+                        <img src="images/theonlyoneleft.jpg" alt="The Only One Left">
+                        <p class="book-title">The Only One Left</p>
+                        <p class="book-author">Riley Sager</p>
+                    </div>
+
+                    <div class="book-card" data-category="mystery">
+                        <img src="images/thenshewasgone.jpg" alt="Then She was Gone">
+                        <p class="book-title">AThen She was Gone</p>
+                        <p class="book-author">Lisa Jewell</p>
+                    </div>
+
+                    <div class="book-card" data-category="mystery">
+                        <img src="images/tnmn.jpg" alt="That's not My Name">
+                        <p class="book-title">hat's not My Name</p>
+                        <p class="book-author">Megan Lally</p>
                     </div>
                 </div>
             </section>
         </div>
     </div>
-
+</main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

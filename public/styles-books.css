@@ -5,14 +5,62 @@ body{
 }
 
 h2 {
-    margin-top: 100px; /* Adjust as needed */
-    padding-top: 20px; /* Extra space for visibility */
+    margin-top: 100px;
+    padding-top: 20px;
+    color: black !important;/* Force color to apply */
+    font-size: 2.5rem !important;
+    font-family: 'Crimson Pro', serif !important;
 }
 
+.categories {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Allows wrapping on small screens */
+}
+
+.categories button {
+    background-color: #c78ba0; /* Dusty Rose */
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    margin-top: 20px;
+    font-size: 14px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.categories button:hover {
+        background-color: #a67892; /* Muted Mauve */
+        transform: scale(1.05);
+}    
+.categories button:active {
+        background-color: #7a3045; /* Deep Maroon */
+}
+
+
+
+.search-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#searchBar {
+    width: 50%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid rgb(116, 113, 113);
+    border-radius: 5px;
+}
+
+
 .book-section {
-    margin-left: 150px;
+    margin-left: 120px;
     padding: 20px;
-    margin-top: 80px;
+    margin-top: 25px;
 }
 .book-container {
     display: flex;
