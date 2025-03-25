@@ -1,36 +1,26 @@
-function filterBooks(category) {
-    let books = document.getElementsByClassName('book-card');
-
-    for (let i = 0; i < books.length; i++) {
-        let bookCategory = books[i].dataset.category; 
-        
-        if (category === 'all' || bookCategory === category) {
-            books[i].style.display = "flex"; // Make sure flex is used if they are flexbox items
-        } else {
-            books[i].style.display = "none";
-        }
-    }
-}
-
-
-function searchBooks() {
-    let input = document.getElementById('searchBar').value.toLowerCase();
-    let books = document.getElementsByClassName('book-card');
-
-    for (let i = 0; i < books.length; i++) {
-        let title = books[i].getElementsByClassName('book-title')[0].innerText.toLowerCase();
-        let author = books[i].getElementsByClassName('book-author')[0].innerText.toLowerCase();
-
-        if (title.includes(input) || author.includes(input)) {
-            books[i].style.display = "flex"; // Again, use flex if needed
-        } else {
-            books[i].style.display = "none";
-        }
-    }
-}
-
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("JavaScript Loaded!"); // Debugging step
+    const searchBar = document.getElementById("searchBar");
+
+    searchBar.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") { // Only trigger on Enter key press
+            let query = searchBar.value.trim().toLowerCase();
+            let books = document.querySelectorAll(".book-link");
+
+            let found = false;
+
+            books.forEach((book) => {
+                let title = book.querySelector(".book-title").innerText.toLowerCase();
+                let bookLink = book.getAttribute("href"); // Ensure each book has an href
+
+                if (title.includes(query) && query !== "") {
+                    found = true;
+                    window.location.href = bookLink; // Redirect to book's page
+                }
+            });
+
+            if (!found && query !== "") {
+                alert("Book not found. Please check the title and try again.");
+            }
+        }
+    });
 });
-
-

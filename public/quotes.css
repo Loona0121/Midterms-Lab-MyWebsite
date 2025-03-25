@@ -1,0 +1,135 @@
+/* Global Styles */
+body {
+    background: linear-gradient(to right, #f8e0e4, #f1e3e6);
+    font-family: 'Crimson Pro', serif;
+    padding-top: 50px;
+}
+
+.logo {
+    height: 80px !important; /* Increase size */
+    width: auto; /* Maintain aspect ratio */
+    margin:0;
+}
+
+.navbar-brand {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0; /* Remove extra padding */
+    margin-left: 0; /* Ensure it's fully left-aligned */
+}
+
+
+.navbar-brand img {
+    height: 100px !important;  /* Make the logo larger */
+    width: auto !important;   /* Maintain aspect ratio */
+    max-width: none !important; /* Prevent it from shrinking */
+    display: block !important; 
+    margin-left: 0;
+    margin-right: auto;/* Ensure it doesn't get overridden */
+}
+
+/* Fix Navbar */
+.navbar {
+    padding: 3px 0;
+    height: 70px;
+}
+
+/* Center Content */
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 20px;
+}
+
+/* Title Styling */
+h1 {
+    color: #7b224b;
+    font-size: 3.0 rem;
+    font-family: 'Crimson Pro', serif !important;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+/* Quote Container */
+.quote-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 80%;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+/* Quote Card */
+.quote-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s;
+    position: relative;
+    border-left: 6px solid #e164a9; 
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+/* Hover effect */
+.quote-card:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Decorative Quote Icon */
+.quote-card::before {
+    content: "❝";
+    font-size: 50px;
+    color: #e164a9;
+    position: absolute;
+    top: -20px;
+    left: 15px;
+}
+
+/* Quote Text */
+.quote-text {
+    font-size: 1.4rem;
+    font-style: italic;
+    font-family: 'Georgia', serif;
+    color: #333;
+}
+
+/* Author & Book */
+.quote-author {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #7b224b;
+}
+
+/* Footer */
+.footer {
+    height: 70px;
+    background-color: #1a1a1a; /* Dark background */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    position: relative; /* Or use fixed if you want it always visible */
+    bottom: 0;
+    width: 100%;
+}
+
+html, body {
+    height: 100%;
+}
+
+.content-wrapper {
+    min-height: calc(100vh - 70px); /* Ensures content fills the page before footer */
+}
+

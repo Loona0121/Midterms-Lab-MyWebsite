@@ -1,15 +1,42 @@
 /* Global Styles */
 body {
-    background: linear-gradient(to right, #ffccd5, #edd8dc);
+    background: linear-gradient(to right, #f8e0e4, #f1e3e6);
     margin-top: 0;
     font-family: Arial, Helvetica, sans-serif;
     padding-top: 60px; /* Prevent navbar from covering content */
     
 }
 
+.logo {
+    height: 80px !important; /* Increase size */
+    width: auto; /* Maintain aspect ratio */
+    margin:0;
+}
+
+.navbar-brand {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0; /* Remove extra padding */
+    margin-left: 0; /* Ensure it's fully left-aligned */
+}
+
+
+.navbar-brand img {
+    height: 100px !important;  /* Make the logo larger */
+    width: auto !important;   /* Maintain aspect ratio */
+    max-width: none !important; /* Prevent it from shrinking */
+    display: block !important; 
+    margin-left: 0;
+    margin-right: auto;/* Ensure it doesn't get overridden */
+}
+
+
 /* Fix Navbar */
 .navbar {
-    padding: 10px 20px;
+    padding: 3px 0;
+    height: 70px;
 }
 
 /* Center Content */
@@ -39,17 +66,33 @@ h1 {
 
 /* Call-to-Action Button */
 .btn-primary {
-    background-color: #e164a9;
-    border: none;
-    padding: 5px 10px;
-    font-size: 1.2rem;
-    border-radius: 5px;
+    display: inline-block;
+    margin-top: 30px;
+    font-weight: bold;
+    background-color: #e164a9; /* Dark background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Top-bottom & left-right padding */
+    font-size: 16px;
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove default underline */
     transition: 0.3s;
+    border: none;
 }
 
 .btn-primary:hover {
-    background-color: #d14b91;
+    background-color: #d14b91 !important;
 }
+
+.btn-primary:focus, 
+.btn-primary:active, 
+.btn-primary:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    background-color: #d14b91 !important; /* Keeps hover color when clicked */
+}
+
+
 
 /* Image */
 .image-container img {
@@ -59,7 +102,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
 }
 
 /* Mobile Responsive */
@@ -106,6 +149,28 @@ h1 {
     color: white;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
     max-width: 80%;
+}
+
+/* Footer */
+.footer {
+    height: 70px;
+    background-color: #1a1a1a; /* Dark background */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    position: relative; /* Or use fixed if you want it always visible */
+    bottom: 0;
+    width: 100%;
+}
+
+html, body {
+    height: 100%;
+}
+
+.content-wrapper {
+    min-height: calc(100vh - 70px); /* Ensures content fills the page before footer */
 }
 
 

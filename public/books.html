@@ -7,13 +7,18 @@
     <link rel="stylesheet" href="styles-books.css">
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro&family=Literata" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 </head>
-<script src="script-books.js"></script>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
           <div class="container">
-              <a class="navbar-brand" href="#">My Book Journal</a>
+    
+            <a class="navbar-brand" href="#">
+                <img src="images/lit-removebg-preview.png" alt="My Book Journal Logo" class="logo">
+            </a>  
+    
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
               </button>
@@ -21,7 +26,7 @@
                   <ul class="navbar-nav">
                       <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
                       <li class="nav-item"><a class="nav-link" href="books.html">Books</a></li>
-                      <li class="nav-item"><a class="nav-link" href="recommendations.html">Recommendations</a></li>
+                      <li class="nav-item"><a class="nav-link" href="book-quotes.html">Quotes</a></li>
                       <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                       <li class="nav-item"><a class="nav-link" href="contacts.html">Contact</a></li>
                   </ul>
@@ -30,194 +35,350 @@
         </nav>
       </header>
 
-<main>
-    <div class="categories">
-        <button onclick="filterBooks('fantasy')">Fantasy</button>
-        <button onclick="filterBooks('romance')">Romance</button>
-        <button onclick="filterBooks('horror')">Horror</button>
-        <button onclick="filterBooks('youngadult')">Young Adult</button>
-        <button onclick="filterBooks('mystery')">Mystery</button>
-        <button onclick="filterBooks('all')">Show All</button>
-    </div>
-    
+      
+`   <main>
     <div class="search-container">
-        <input type="text" id="searchBar" placeholder="Search books..." onkeyup="searchBooks()">
+        <input type="text" id="searchBar" placeholder="Search books...">
+        <i class="fa fa-search search-icon"></i>
     </div>
-    
+
+    <div class="categories">
+        <a href="fantasy.html"><button onclick="filterBooks('fantasy')">Fantasy</button></a>
+        <a href="romance.html"><button onclick="filterBooks('romance')">Romance</button>
+        <a href="horror.html"><button onclick="filterBooks('horror')">Horror</button></a>
+        <a href="ya.html"><button onclick="filterBooks('youngadult')">Young Adult</button></a>
+        <a href="mystery.html"><button onclick="filterBooks('mystery')">Mystery</button></a>
+        <a href="hf.html"><button onclick="filterBooks('historicalfiction')">Historical Fiction</button></a>
+        <a href="books.html"><button onclick="filterBooks('all')">Show All</button></a>
+    </div>
+
         <div class="book-section">
             <!-- Fantasy Section -->
             <section id="fantasy">
                 <h2 class="mb-3">Fantasy</h2>
                 <div class="book-container">
-                    <div class="book-card" data-category="fantasy">
-                        <img src="images/game_of_thrones.jpg" alt="A Game of Thrones">
-                        <p class="book-title">A Game of Thrones</p>
-                        <p class="book-author">George R.R. Martin</p>
-                    </div>
+                    
+                    <a href="one-dark-window.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/odw.jpg" alt="One Dark Window">
+                            <p class="book-title">One Dark Window</p>
+                            <p class="book-author">Madeline Miller</p>
+                        </div>
+                    </a>
+                    
+                    <a href="harry-potter.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/harrypotter.jpg" alt="Harry Potter">
+                            <p class="book-title">Harry Potter</p>
+                            <p class="book-author">J.K Rowling</p>
+                        </div>
+                    </a>
 
-                    <div class="book-card" data-category="fantasy">
-                        <img src="images/harrypotter.jpg" alt="Harry Potte">
-                        <p class="book-title">Harry Potter</p>
-                        <p class="book-author">Chris Smith</p>
+                    <a href="lord-of-the-rings.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/lotr.jpg" alt="Lord of the Rings">
+                            <p class="book-title">Lord of the Rings</p>
+                            <p class="book-author">J.R.R Tolkien</p>
+                        </div>
+                    </a>
+
+                    <a href="fourth-wing.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/fourthwing.jpg" alt="Fourth Wing">
+                            <p class="book-title">Fourth Wing</p>
+                            <p class="book-author">Rebecca Yarros</p>
+                        </div>
+                    </a>
+
+                    <a href="will-of-the-many.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/twotm.jpg" alt="The Will of the Many">
+                            <p class="book-title">The Will of the Many</p>
+                            <p class="book-author">James Islington</p>
+                        </div>
+                    </a>
+
+                    <div class="button-container">
+                        <a href="fantasy.html">
+                            <button class="view-more-btn">View More</button>
+                        </a>
                     </div>
-                    <div class="book-card" data-category="fantasy">
-                        <img src="images/lotr.jpg" alt="Lord of the Rings">
-                        <p class="book-title">Lord of the Rings</p>
-                        <p class="book-author">J.K. Rowling</p>
-                    </div>
-                    <div class="book-card" data-category="fantasy">
-                        <img src="images/fourthwing.jpg" alt="Fourth Wing">
-                        <p class="book-title">Fourth Wing</p>
-                        <p class="book-author">Rebecca Yarros</p>
-                    </div>
-                    <div class="book-card" data-category="fantasy">
-                        <img src="images/twotm.jpg" alt="The Will of the Many">
-                        <p class="book-title">The Will of the Many</p>
-                        <p class="book-author">James Islington</p>
-                    </div>
-                </div>
+                    
+            </div>                
             </section>
-
+            
            <!--Romance Section-->
             <section id="romance" class="mt-5">
                 <h2 class="mb-3">Romance</h2>
                 <div class="book-container">
-                    <div class="book-card" data-category="romance">
-                        <img src="images/sevenyearslip.jpg" alt="The Seven Year Slip">
-                        <p class="book-title">The Seven Year Slip</p>
-                        <p class="book-author">Ashley Poston</p>
-                    </div>
 
-                    <div class="book-card" data-category="romance">
-                        <img src="images/prideandprejudice.jpg" alt="Pride and Prejudicet">
-                        <p class="book-title">Pride and Prejudice</p>
-                        <p class="book-author">Jane Austen</p>
-                    </div>
+                    <a href="sys.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/sevenyearslip.jpg" alt="The Seven Year Slip">
+                            <p class="book-title">The Seven Year Slip</p>
+                            <p class="book-author">Ashley Poston</p>
+                        </div>
+                    </a>
 
-                    <div class="book-card" data-category="romance">
-                        <img src="images/archer'svoice.jpg" alt="Archer's Voice">
-                        <p class="book-title">Archer's Voice</p>
-                        <p class="book-author">Mia Sheridan</p>
-                    </div>
+                    <a href="av.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/archer'svoice.jpg" alt="Archer's Voice">
+                            <p class="book-title">Archer's Voice</p>
+                            <p class="book-author">Mia Sheridan</p>
+                        </div>
+                    </a>
 
-                    <div class="book-card" data-category="romance">
-                        <img src="images/yourstruly.jpg" alt="Yours Truly">
-                        <p class="book-title">Yours Truly</p>
-                        <p class="book-author">Abby Jimenez</p>
-                    </div>
+                    <a href="pmp.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/practicemakesperfect.jpg" alt="Practice Makes Perfect">
+                            <p class="book-title">Practice Makes Perfect</p>
+                            <p class="book-author">Sarah Adams</p>
+                        </div>
+                    </a>
 
-                    <div class="book-card" data-category="romance">
-                        <img src="images/twlb.jpg" alt="Things We Left Behind">
-                        <p class="book-title">Things We Left Behind</p>
-                        <p class="book-author">Lucy Score</p>
+                    <a href="laow.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/love.jpg" alt="Love and Other Words">
+                            <p class="book-title">Love and Other Words</p>
+                            <p class="book-author">Christina Lauren</p>
+                        </div>
+                    </a>
+
+                    <a href="yt.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/yourstruly.jpg" alt="Yours Truly">
+                            <p class="book-title">Yours Truly</p>
+                            <p class="book-author">Abby Jimenez</p>
+                        </div>
+                    </a>
+
+                    <div class="button-container">
+                        <a href="romance.html">
+                            <button class="view-more-btn">View More</button>
+                        </a>
                     </div>
 
             <!--Horror Section-->
             <section id="horror" class="mt-5">
                 <h2 class="mb-3">Horror</h2>
                 <div class="book-container">
-                    <div class="book-card" data-category="horror">
-                        <img src="images/titf.jpg" alt="Tender is the Flesh">
-                        <p class="book-title">Tender is the Flesh</p>
-                        <p class="book-author">Agustina Bazterrica</p>
-                    </div>
 
-                    <div class="book-card" data-category="horror">
-                        <img src="images/brother.jpg" alt="Brother">
-                        <p class="book-title">Brother</p>
-                        <p class="book-author">Ania Ahlborn</p>
-                    </div>
+                    <a href="titf.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/titf.jpg" alt="Tender is the Flesh">
+                            <p class="book-title">Tender Is the Flesh</p>
+                            <p class="book-author">Agustina Bazterrica</p>
+                        </div>
+                    </a>
 
-                    <div class="book-card" data-category="horror">
-                        <img src="images/diavola.jpg" alt="Diavola">
-                        <p class="book-title">Diavola</p>
-                        <p class="book-author">Jennifer Marie Thorne</p>
-                    </div>
+                    <a href="the-troop.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/thetroop.jpg" alt="The Troop">
+                            <p class="book-title">The Troop</p>
+                            <p class="book-author">Nick Cutter</p>
+                        </div>
+                    </a>
 
-                    <div class="book-card" data-category="horror">
-                        <img src="images/intercepts.jpg" alt="Intercepts">
-                        <p class="book-title">Intercepts</p>
-                        <p class="book-author">T.J. Payne</p>
-                    </div>
+                    <a href="brother.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/brother.jpg" alt="Brother">
+                            <p class="book-title">Brother</p>
+                            <p class="book-author">Ania Ahlborn</p>
+                        </div>
+                    </a>
 
-                    <div class="book-card" data-category="horror">
-                        <img src="images/exorcists.jpg" alt="The Exorcist's House">
-                        <p class="book-title">The Exorcist's House</p>
-                        <p class="book-author">Nick Roberts</p>
+                    <a href="intercepts.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/intercepts.jpg" alt="Intercepts">
+                            <p class="book-title">Intercepts</p>
+                            <p class="book-author">T.J. Payne</p>
+                        </div>
+                    </a>
+                
+                    
+                    <a href="exorcist.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/exorcists.jpg" alt="The Exorcist's House">
+                            <p class="book-title">The Exorcist's House</p>
+                            <p class="book-author">Nick Roberts</p>
+                        </div>
+                    </a>
+
+                    <div class="button-container">
+                        <a href="horror.html">
+                            <button class="view-more-btn">View More</button>
+                        </a>
                     </div>
 
             <!--Young Adult Section-->
             <section id="youngadult" class="mt-5">
                 <h2 class="mb-3">Young Adult</h2>
                 <div class="book-container">
-                    <div class="book-card" data-category="youngadult">
-                        <img src="images/bttm.jpg" alt="Better than the Movies">
-                        <p class="book-title">Better than the Movies</p>
-                        <p class="book-author">Lynn Painter</p>
+
+                    <a href="bttm.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/bttm.jpg" alt="Better than the Movies">
+                            <p class="book-title">Better than the Movies</p>
+                            <p class="book-author">Lynn Painter</p>
+                        </div>
+                    </a>
+
+                    <a href="powerless.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/poweless.jpg" alt="Powerless">
+                            <p class="book-title">Powerless</p>
+                            <p class="book-author">Lauren Roberts</p>
+                        </div>
+                    </a>
+
+                    <a href="binding13.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/binding13.jpg" alt="Binding 13">
+                            <p class="book-title">Binding 13</p>
+                            <p class="book-author">Chloe Walsh</p>
+                        </div>
+                    </a>
+
+                    <a href="lag.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/lag.jpg" alt="Love and Gelato">
+                            <p class="book-title">Love and Gelato</p>
+                            <p class="book-author">Jenna Evans Welch</p>
+                        </div>
+                    </a>
+
+                    <a href="shatter-me.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/sm.jpg" alt="Shatter Me">
+                            <p class="book-title">Shatter Me</p>
+                            <p class="book-author">Tahereh Mafi</p>
+                        </div>
+                    </a>
+
+                    <div class="button-container">
+                        <a href="ya.html">
+                            <button class="view-more-btn">View More</button>
+                        </a>
                     </div>
 
-                    <div class="book-card" data-category="youngadult">
-                        <img src="images/binding13.jpg" alt="Binding 13">
-                        <p class="book-title">Binding 13</p>
-                        <p class="book-author">Chloe Walsh</p>
-                    </div>
-
-                    <div class="book-card" data-category="youngadult">
-                        <img src="images/poweless.jpg" alt="Powerless">
-                        <p class="book-title">Powerless</p>
-                        <p class="book-author">Lauren Roberts</p>
-                    </div>
-
-                    <div class="book-card" data-category="youngadult">
-                        <img src="images/shatterme.Baw--" alt="Shatter Me">
-                        <p class="book-title">Shatter Me</p>
-                        <p class="book-author">Tahereh Mafi</p>
-                    </div>
-
-                    <div class="book-card" data-category="youngadult">
-                        <img src="images/lag.jpg" alt="Love and Gelato">
-                        <p class="book-title">Love and Gelato</p>
-                        <p class="book-author">Jenna Evans Welch</p>
-                    </div>
 
             <!--Mystery Section-->
             <section id="mystery" class="mt-5">
                 <h2 class="mb-3">Mystery</h2>
                 <div class="book-container">
-                    <div class="book-card" data-category="mystery">
-                        <img src="images/localwomanmissing.jpg" alt="Local Woman Missing">
-                        <p class="book-title">BLocal Woman Missing</p>
-                        <p class="book-author">Mary Kubica</p>
+
+                    
+                    <a href="lwm.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/localwomanmissing.jpg" alt="Local Woman Missing">
+                            <p class="book-title">Local Woman Missing</p>
+                            <p class="book-author">Mary Kubica</p>
+                        </div>
+                    </a>
+
+                    <a href="sp.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/sp.jpg" alt="The Silent Patient">
+                            <p class="book-title">The Silent Patient</p>
+                            <p class="book-author">Alex Michaelides</p>
+                        </div>
+                    </a>
+
+                    <a href="the-only-one-left.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/theonlyoneleft.jpg" alt="The Only One Left">
+                            <p class="book-title">The Only One Left</p>
+                            <p class="book-author">Riley Sager</p>
+                        </div>
+                    </a>
+                   
+                    <a href="then-she-was-gone.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/thenshewasgone.jpg" alt="Then She was Gone">
+                            <p class="book-title">Then She was Gone</p>
+                            <p class="book-author">Lisa Jewell</p>
+                        </div>
+                    </a>
+                    
+                    <a href="thats-not-my-name.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/tnmn.jpg" alt="That's not My Name">
+                            <p class="book-title">That's not My Name</p>
+                            <p class="book-author">Megan Lally</p>
+                        </div>
+                    </a>
+
+                    <div class="button-container">
+                        <a href="mystery.html">
+                            <button class="view-more-btn">View More</button>
+                        </a>
                     </div>
 
-                    <div class="book-card" data-category="mystery">
-                        <img src="images/sp.jpg" alt="The Silent Patient">
-                        <p class="book-title">The Silent Patient</p>
-                        <p class="book-author">Alex Michaelides</p>
+
+            <!--Historical Fiction Section-->
+            <section id="historicalfiction" class="mt-5">
+                <h2 class="mb-3">Historical Fiction</h2>
+                <div class="book-container">
+
+                    <a href="tkam.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/mockingbird.jpg" alt="To Kill a mockingbird">
+                            <p class="book-title">To Kill a mockingbird</p>
+                            <p class="book-author">Harper Lee</p>
+                        </div>
+                    </a>
+                    
+                    <a href="atnwcs.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/allthenightwecannotsee.jpg" alt="All the Night We Cannot See">
+                            <p class="book-title">All the Night We Cannot See</p>
+                            <p class="book-author">Anthony Doerr</p>
+                        </div>
+                    </a>
+
+                    <a href="thewomen.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/thewomen.jpg" alt="The Women">
+                            <p class="book-title">The Women</p>
+                            <p class="book-author">Kristin Hannah</p>
+                        </div>
+                    </a>
+
+                    <a href="pachinko.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/pachinko.jpg" alt="Pachinko">
+                            <p class="book-title">Pachinko</p>
+                            <p class="book-author">Min Jin Lee</p>
+                        </div>
+                    </a>
+
+                    <a href="nightingale.html" class="book-link">
+                        <div class="book-card">
+                            <img src="images/nightingale.jpg" alt="The Nightingale">
+                            <p class="book-title">The Nightingale</p>
+                            <p class="book-author">Kristin Hannah</p>
+                        </div>
+                    </a>
+
+                    <div class="button-container">
+                        <a href="hf.html">
+                            <button class="view-more-btn">View More</button>
+                        </a>
                     </div>
 
-                    <div class="book-card" data-category="mystery">
-                        <img src="images/theonlyoneleft.jpg" alt="The Only One Left">
-                        <p class="book-title">The Only One Left</p>
-                        <p class="book-author">Riley Sager</p>
-                    </div>
 
-                    <div class="book-card" data-category="mystery">
-                        <img src="images/thenshewasgone.jpg" alt="Then She was Gone">
-                        <p class="book-title">AThen She was Gone</p>
-                        <p class="book-author">Lisa Jewell</p>
-                    </div>
-
-                    <div class="book-card" data-category="mystery">
-                        <img src="images/tnmn.jpg" alt="That's not My Name">
-                        <p class="book-title">hat's not My Name</p>
-                        <p class="book-author">Megan Lally</p>
-                    </div>
                 </div>
             </section>
         </div>
     </div>
 </main>
+
+        <footer class="footer">
+            &copy; 2025 LitPicks | All Rights Reserved
+        </footer>
+        
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script-books.js"></script>
 </body>
 </html>
